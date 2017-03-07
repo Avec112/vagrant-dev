@@ -70,7 +70,7 @@ Vagrant.configure("2") do |config|
 	apt-get update
        	apt-get install -y docker-ce 
 	sudo groupadd docker
-	usermod -aG docker $USER
+	usermod -aG docker ubuntu
 	apt-get install -y openjdk-8-jdk
         apt-get install -y maven
    SHELL

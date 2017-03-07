@@ -18,5 +18,5 @@ Configurations
 * Install Vagrant
 
 ## Commands
-Start with 'vagrant up'
-Login with 'vagrant ssh'
+* Start with 'vagrant up'
+* Login with 'vagrant ssh'
