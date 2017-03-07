@@ -7,7 +7,8 @@ Base box ubuntu/xenial64 (Ubuntu Server 16.04.2 LTS)
 
 Installs the following
 * docker-ce (currently v17.03)
-* openjdk-8-jdk
+* ansible (currently v2.2.1.0)
+* openjdk-8-jdk (currently v1.8.0_121)
 * maven (currently v3.3.9)
 
 Configurations
