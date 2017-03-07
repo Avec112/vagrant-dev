@@ -1,7 +1,7 @@
 # vagrant-dev
 Vagrant file for creating java 8 development environment.
 
-Base box ubuntu/xenital64 (Ubuntu Server 16.04.2 LTS)
+Base box ubuntu/xenial64 (Ubuntu Server 16.04.2 LTS)
 
 ## Provisioning
 
