@@ -1,7 +1,7 @@
 # vagrant-dev
 Vagrant file for creating java 8 development environment.
 
-Base box ubuntu/xenial64 (Ubuntu Server 16.04.2 LTS)
+Base box geerlingguy/ubuntu1604 v1.0.9 (Ubuntu Server 16.04.2 LTS)
 
 ## Provisioning
 
@@ -11,14 +11,10 @@ Installs the following
 * openjdk-8-jdk (currently v1.8.0_121)
 * maven (currently v3.3.9)
 
-Configurations
-* add group docker
-* add user to group docker...so you can drop sudo all the time
-* copy ~/.gitconfig from host so you have git allready configured
 
 ## Requirments
-* Provider installed (I like Virtualbox)
-* Vagrant installed
+* Virtualbox v5.1.x or newer is recommended. No older than 4.0.x (only tested 5.1.x )
+* Vagrant v1.9.2 or newer. (1.9.1 og older might work, but then you must change Vagrant.require_version first)
 
 ## Commands
 * Start with `vagrant up`

@@ -1,6 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+Vagrant.require_version ">= 1.9.2"
+
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -12,12 +15,14 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "geerlingguy/ubuntu1604"
+  config.vm.box_version = "1.0.9"
+
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
-   config.vm.box_check_update = false
+  config.vm.box_check_update = false
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -54,13 +59,6 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you are using for more
   # information on available options.
 
-  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
-  # such as FTP and Heroku are also available. See the documentation at
-  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-  # config.push.define "atlas" do |push|
-  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
-  # end
-
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
@@ -69,15 +67,17 @@ Vagrant.configure("2") do |config|
 	add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 	apt-add-repository ppa:ansible/ansible
 	apt-get update
+	apt-get upgrade
        	apt-get install -y docker-ce 
-	groupadd docker
-	usermod -aG docker ubuntu
+	#groupadd docker
+	#usermod -aG docker ubuntu
 	apt-get install -y openjdk-8-jdk
         apt-get install -y maven
 	apt-get install -y ansible
+	apt-get autoremove
    SHELL
 
    # Copy .gitconfig so you do not have to configure
-   config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
+   #config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
 
 end
